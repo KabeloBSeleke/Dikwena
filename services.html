@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive pest control services across Gauteng - Cockroaches, Bed Bugs, Rodents, Termites, and more. Safe, effective, certified solutions.">
+    <title>Our Services | Dikwena Pest Control</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        :root {
+            --gold: #B8964A;
+            --gold-light: #D4AF37;
+            --gold-dark: #8B7355;
+            --black: #1A1A1A;
+            --cream: #F5E6D3;
+        }
+        .bg-gold { background-color: var(--gold); }
+        .bg-gold-light { background-color: var(--gold-light); }
+        .text-gold { color: var(--gold); }
+        .text-gold-light { color: var(--gold-light); }
+        html { scroll-behavior: smooth; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .float-animation { animation: float 3s ease-in-out infinite; }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <!-- ========== HEADER ========== -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="assets/img/logo-gold.png" alt="Dikwena Logo" class="h-12 md:h-16">
+                <div class="hidden md:block">
+                    <h1 class="text-xl font-bold" style="color: var(--gold);">DIKWENA</h1>
+                    <p class="text-xs text-gray-600">Trading and Projects</p>
+                </div>
+            </div>
+            
+            <ul class="hidden md:flex space-x-8 text-sm font-medium">
+                <li><a href="index.html" class="hover:text-gold transition">Home</a></li>
+                <li><a href="about.html" class="hover:text-gold transition">About Us</a></li>
+                <li><a href="services.html" class="text-gold transition">Services</a></li>
+                <li><a href="contact.html" class="hover:text-gold transition">Contact</a></li>
+            </ul>
+            
+            <a href="contact.html" class="hidden md:inline-block bg-gold text-white px-6 py-3 rounded-lg font-semibold hover:bg-gold-light transition">
+                Request Quote
+            </a>
+            
+            <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </nav>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <ul class="flex flex-col space-y-4 px-4 py-6 text-sm font-medium">
+                <li><a href="index.html" class="block hover:text-gold">Home</a></li>
+                <li><a href="about.html" class="block hover:text-gold">About Us</a></li>
+                <li><a href="services.html" class="block text-gold">Services</a></li>
+                <li><a href="contact.html" class="block hover:text-gold">Contact</a></li>
+                <li><a href="contact.html" class="block bg-gold text-white px-6 py-3 rounded-lg text-center">Request Quote</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- ========== PAGE HERO ========== -->
+    <section class="bg-gray-900 text-white py-16 md:py-24">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">Our Pest Control Services</h2>
+            <p class="text-lg text-gray-300 max-w-2xl mx-auto">Comprehensive solutions for every pest problem - Safe, effective, and guaranteed</p>
+        </div>
+    </section>
+
+    <!-- ========== SERVICES GRID ========== -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl md:text-4xl font-bold mb-4">We Exterminate The Following</h3>
+                <p class="text-gray-600">Professional treatment with Department of Agriculture approved chemicals</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1: Cockroaches -->
+                <div class="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-gold hover:shadow-xl transition">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 bg-gold rounded-full flex items-center justify-center">
+                            <i data-lucide="bug" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h4 class="text-xl font-bold">Cockroach Control</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">Eliminate cockroach infestations with our targeted treatments. We use safe, odorless chemicals that reach hidden nesting areas and breeding grounds.</p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Complete eradication of all life stages</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Safe for homes and food preparation areas</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Long-lasting protection</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service 2: Bed Bugs -->
+                <div class="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-gold hover:shadow-xl transition">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 bg-gold rounded-full flex items-center justify-center">
+                            <i data-lucide="bed-double" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h4 class="text-xl font-bold">Bed Bug Treatment</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">Comprehensive bed bug extermination for homes, hotels, and student accommodations. Our proven methods ensure complete elimination and prevent re-infestation.</p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Mattress, furniture & crack treatment</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Follow-up inspection included</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Discreet service for businesses</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service 3: Rodents -->
+                <div class="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-gold hover:shadow-xl transition">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 bg-gold rounded-full flex items-center justify-center">
+                            <i data-lucide="rat" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h4 class="text-xl font-bold">Rodent Control</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">Effective mice and rat removal using humane traps, baiting systems, and exclusion methods. We identify entry points and seal them to prevent future invasions.</p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Complete property inspection</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Strategic bait placement</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Entry point sealing recommendations</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service 4: Termites -->
+                <div class="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-gold hover:shadow-xl transition">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 bg-gold rounded-full flex items-center justify-center">
+                            <i data-lucide="bug" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h4 class="text-xl font-bold">Termite Control</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">Protect your property from structural damage with our specialized termite treatments. We offer both preventative and curative solutions for all termite species.</p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Pre-construction soil treatment</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Wood treatment & barrier systems</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Annual inspection available</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service 5: Ants -->
+                <div class="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-gold hover:shadow-xl transition">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 bg-gold rounded-full flex items-center justify-center">
+                            <i data-lucide="bug" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h4 class="text-xl font-bold">Ant Extermination</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">Eliminate ant colonies with targeted treatments that reach the queen. Effective against all ant species including sugar ants, carpenter ants, and fire ants.</p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Colony elimination at the source</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Indoor and outdoor treatment</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Barrier protection zones</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service 6: Flies & Mosquitoes -->
+                <div class="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-gold hover:shadow-xl transition">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 bg-gold rounded-full flex items-center justify-center">
+                            <i data-lucide="bug-off" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h4 class="text-xl font-bold">Flies & Mosquitoes</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">Control flying insects with fogging, residual sprays, and breeding site elimination. Ideal for restaurants, outdoor events, and residential areas.</p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>ULV fogging for instant results</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Breeding site identification</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Safe for food preparation areas</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service 7: Wasps & Bees -->
+                <div class="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-gold hover:shadow-xl transition">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 bg-gold rounded-full flex items-center justify-center">
+                            <i data-lucide="bug" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h4 class="text-xl font-bold">Wasps & Bees</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">Safe removal of wasp nests and bee hives from residential and commercial properties. Emergency same-day service available for dangerous situations.</p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Safe nest removal</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Emergency response available</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Protective equipment used</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service 8: Moths -->
+                <div class="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-gold hover:shadow-xl transition">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 bg-gold rounded-full flex items-center justify-center">
+                            <i data-lucide="bug" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h4 class="text-xl font-bold">Moth Control</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">Protect clothing, carpets, and stored goods from moth damage. We treat both adult moths and larvae to break the reproduction cycle.</p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Wardrobe & storage treatment</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Carpet & upholstery protection</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Prevention advice included</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service 9: Silverfish -->
+                <div class="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-gold hover:shadow-xl transition">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 bg-gold rounded-full flex items-center justify-center">
+                            <i data-lucide="bug" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h4 class="text-xl font-bold">Silverfish Treatment</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">Eliminate silverfish from bathrooms, kitchens, and damp areas. Our treatments target hiding spots and breeding areas for complete control.</p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Moisture control recommendations</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Crack and crevice treatment</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Long-lasting residual protection</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service 10: Fleas & Ticks -->
+                <div class="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-gold hover:shadow-xl transition">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 bg-gold rounded-full flex items-center justify-center">
+                            <i data-lucide="bug" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h4 class="text-xl font-bold">Fleas & Ticks</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">Pet-safe treatments that eliminate fleas and ticks from your home and yard. We break the life cycle to prevent re-infestation.</p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Pet-safe formulations</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Indoor and outdoor treatment</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Follow-up treatments available</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service 11: Grain Beetles -->
+                <div class="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-gold hover:shadow-xl transition">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 bg-gold rounded-full flex items-center justify-center">
+                            <i data-lucide="bug" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h4 class="text-xl font-bold">Grain Beetles</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">Protect stored food products from grain beetle infestations. Essential service for restaurants, kitchens, and food storage facilities.</p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Food storage area treatment</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Food-safe products used</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Storage best practices advice</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service 12: Soil Poisoning -->
+                <div class="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-gold hover:shadow-xl transition">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 bg-gold rounded-full flex items-center justify-center">
+                            <i data-lucide="droplet" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h4 class="text-xl font-bold">Soil Poisoning</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">Pre-construction and post-construction soil treatment to prevent termite and pest infestations. Essential for new builds and renovations.</p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Pre-construction barrier treatment</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Foundation protection</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-gold mt-0.5"></i>
+                            <span>Long-term soil barrier</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== IN ACTION SECTION ========== -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl md:text-4xl font-bold mb-4">Our Team In Action</h3>
+                <p class="text-gray-600">Professional, equipped, and ready to protect your property</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="rounded-lg overflow-hidden shadow-lg">
+                    <img src="assets/img/action-1.jpeg" alt="Team in protective gear" class="w-full h-64 object-cover">
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-lg">
+                    <img src="assets/img/action-2.png" alt="Professional equipment" class="w-full h-64 object-cover">
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-lg">
+                    <img src="assets/img/action-3.jpeg" alt="Fumigation in progress" class="w-full h-64 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS (PLACEHOLDER) ========== -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h3>
+                <p class="text-gray-600">Trusted by 500+ homes and businesses across Gauteng</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex gap-1 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 fill-gold text-gold"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-gold text-gold"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-gold text-gold"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-gold text-gold"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-gold text-gold"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Excellent service! The team was professional, punctual, and thorough. Our cockroach problem was completely resolved after just one treatment."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gold rounded-full flex items-center justify-center text-white font-bold">
+                            S
+                        </div>
+                        <div>
+                            <p class="font-semibold">Sarah M.</p>
+                            <p class="text-sm text-gray-500">Midrand Homeowner</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex gap-1 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 fill-gold text-gold"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-gold text-gold"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-gold text-gold"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-gold text-gold"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-gold text-gold"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">"We use Dikwena for our restaurant chain. They're reliable, discreet, and their products are truly odorless. Highly recommend for commercial properties."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gold rounded-full flex items-center justify-center text-white font-bold">
+                            T
+                        </div>
+                        <div>
+                            <p class="font-semibold">Thabo K.</p>
+                            <p class="text-sm text-gray-500">Restaurant Owner</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex gap-1 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 fill-gold text-gold"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-gold text-gold"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-gold text-gold"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-gold text-gold"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-gold text-gold"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Fast response time and fair pricing. The technicians explained everything clearly and gave us helpful prevention tips. Will definitely use again!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gold rounded-full flex items-center justify-center text-white font-bold">
+                            P
+                        </div>
+                        <div>
+                            <p class="font-semibold">Palesa N.</p>
+                            <p class="text-sm text-gray-500">Property Manager</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PRICING INFO ========== -->
+    <section class="py-16 bg-gray-900 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-3xl md:text-4xl font-bold mb-6">Affordable & Transparent Pricing</h3>
+            <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">Prices depend on the size of space, quantity, and type of service required. Contact us for a personalized quote tailored to your needs.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="inline-block bg-gold text-white px-8 py-4 rounded-lg font-semibold hover:bg-gold-light transition">
+                    Get Free Quote
+                </a>
+                <a href="tel:0768367329" class="inline-block bg-white text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition">
+                    Call: 076 836 7329
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <img src="assets/img/logo-gold.png" alt="Dikwena Logo" class="h-12 mb-4">
+                    <p class="text-sm text-gray-400">Going Beyond Expectations. Professional pest control services across Gauteng Province.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="index.html" class="hover:text-gold">Home</a></li>
+                        <li><a href="about.html" class="hover:text-gold">About Us</a></li>
+                        <li><a href="services.html" class="hover:text-gold">Services</a></li>
+                        <li><a href="contact.html" class="hover:text-gold">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Our Services</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>Cockroach Control</li>
+                        <li>Bed Bug Treatment</li>
+                        <li>Rodent Extermination</li>
+                        <li>Termite Control</li>
+                        <li>General Fumigation</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">Contact Us</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                            <a href="tel:0768367329" class="hover:text-gold">076 836 7329</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                            <a href="tel:0813200898" class="hover:text-gold">081 320 0898</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            <a href="mailto:dikwenap@gmail.com" class="hover:text-gold">dikwenap@gmail.com</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="map-pin" class="w-4 h-4"></i>
+                            <span>Midrand, Gauteng</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2025 Dikwena Trading and Projects (PTY) LTD. All rights reserved. | Reg: 2024/607422/07</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== FLOATING WHATSAPP ========== -->
+    <a href="https://wa.me/27768367329" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition float-animation z-50">
+        <i data-lucide="message-circle" class="w-6 h-6"></i>
+    </a>
+
+    <script>
+        lucide.createIcons();
+        
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dikwena Pest Control - Professional pest extermination services in Gauteng. Harmless, odorless, and effective solutions for homes and businesses.">
+    <meta name="keywords" content="pest control, Gauteng, Midrand, cockroaches, bed bugs, rodents, fumigation, extermination">
+    <title>Dikwena Pest Control | Professional Pest Extermination in Gauteng</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom Styles -->
+    <style>
+        /* Brand Colors */
+        :root {
+            --gold: #B8964A;
+            --gold-light: #D4AF37;
+            --gold-dark: #8B7355;
+            --black: #1A1A1A;
+            --cream: #F5E6D3;
+        }
+        
+        .bg-gold { background-color: var(--gold); }
+        .bg-gold-light { background-color: var(--gold-light); }
+        .text-gold { color: var(--gold); }
+        .text-gold-light { color: var(--gold-light); }
+        .border-gold { border-color: var(--gold); }
+        
+        /* Smooth Scroll */
+        html { scroll-behavior: smooth; }
+        
+        /* Hero Gradient 
+        .hero-gradient {
+            background: linear-gradient(135deg, #1A1A1A 0%, #3A3A3A 100%);
+        }*/
+
+        /* Hero with Background Image & Overlay */
+        .hero-background {
+            position: relative;
+            background-image: url('assets/img/hero-image.png'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Optional: adds a parallax effect */
+        }
+
+        /* This creates the dark "Dikwena" tint so your gold text is readable 
+        .hero-background::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(58, 58, 58, 0.7) 100%);
+            z-index: 1;
+        }*/
+
+        /* Ensures content sits on top of the tint */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <!-- ========== STICKY HEADER / NAVIGATION ========== -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-3">
+                <img src="assets/img/logo-gold.png" alt="Dikwena Logo" class="h-12 md:h-16">
+                <div class="hidden md:block">
+                    <h1 class="text-xl font-bold" style="color: var(--gold);">DIKWENA</h1>
+                    <p class="text-xs text-gray-600">Trading and Projects</p>
+                </div>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex space-x-8 text-sm font-medium">
+                <li><a href="index.html" class="hover:text-gold transition">Home</a></li>
+                <li><a href="about.html" class="hover:text-gold transition">About Us</a></li>
+                <li><a href="services.html" class="hover:text-gold transition">Services</a></li>
+                <li><a href="contact.html" class="hover:text-gold transition">Contact</a></li>
+            </ul>
+            
+            <!-- CTA Button -->
+            <a href="contact.html" class="hidden md:inline-block bg-gold text-white px-6 py-3 rounded-lg font-semibold hover:bg-gold-light transition">
+                Request Quote
+            </a>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <ul class="flex flex-col space-y-4 px-4 py-6 text-sm font-medium">
+                <li><a href="index.html" class="block hover:text-gold">Home</a></li>
+                <li><a href="about.html" class="block hover:text-gold">About Us</a></li>
+                <li><a href="services.html" class="block hover:text-gold">Services</a></li>
+                <li><a href="contact.html" class="block hover:text-gold">Contact</a></li>
+                <li><a href="contact.html" class="block bg-gold text-white px-6 py-3 rounded-lg text-center">Request Quote</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero-background text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center hero-content">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6 float-animation">
+                    Your Trusted <span class="text-gold-light">Pest Control Experts</span>
+                </h2>
+                <p class="text-lg md:text-xl text-gray-300 mb-8">
+                    Professional, safe, and effective pest extermination services across Gauteng. We guarantee peace of mind with harmless, odorless solutions for homes and businesses.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact.html" class="bg-gold text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gold-light transition">
+                        Get Free Quote
+                    </a>
+                    <a href="tel:0768367329" class="bg-white text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition">
+                        Call Now: 076 836 7329
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== WHY CHOOSE US ========== -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl md:text-4xl font-bold mb-4">Why Choose Dikwena Pest Control?</h3>
+                <p class="text-gray-600 max-w-2xl mx-auto">We go beyond expectations to deliver safe, reliable, and effective pest control solutions that protect your family and business.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-gold rounded-full mb-4">
+                        <i data-lucide="shield-check" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Safe & Harmless</h4>
+                    <p class="text-gray-600">Our products are completely harmless to humans and pets. Odorless and colorless chemicals approved by the Department of Agriculture.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-gold rounded-full mb-4">
+                        <i data-lucide="award" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Certified Experts</h4>
+                    <p class="text-gray-600">Qualified Pest Control Officers with practice numbers registered under the Department of Agriculture and 2+ years of experience.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-gold rounded-full mb-4">
+                        <i data-lucide="clock" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Fast Response</h4>
+                    <p class="text-gray-600">Same-day service available across Gauteng. We understand pest emergencies and respond quickly to protect your space.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SERVICES PREVIEW ========== -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl md:text-4xl font-bold mb-4">We Exterminate The Following</h3>
+                <p class="text-gray-600">Comprehensive pest control solutions for residential and commercial properties</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                <div class="bg-white border-2 border-gray-200 p-6 rounded-lg text-center hover:border-gold transition">
+                    <i data-lucide="bug" class="w-10 h-10 mx-auto mb-3 text-gold"></i>
+                    <p class="font-semibold">Cockroaches</p>
+                </div>
+                <div class="bg-white border-2 border-gray-200 p-6 rounded-lg text-center hover:border-gold transition">
+                    <i data-lucide="bed-double" class="w-10 h-10 mx-auto mb-3 text-gold"></i>
+                    <p class="font-semibold">Bed Bugs</p>
+                </div>
+                <div class="bg-white border-2 border-gray-200 p-6 rounded-lg text-center hover:border-gold transition">
+                    <i data-lucide="rat" class="w-10 h-10 mx-auto mb-3 text-gold"></i>
+                    <p class="font-semibold">Rodents</p>
+                </div>
+                <div class="bg-white border-2 border-gray-200 p-6 rounded-lg text-center hover:border-gold transition">
+                    <i data-lucide="bug" class="w-10 h-10 mx-auto mb-3 text-gold"></i>
+                    <p class="font-semibold">Ants</p>
+                </div>
+                <div class="bg-white border-2 border-gray-200 p-6 rounded-lg text-center hover:border-gold transition">
+                    <i data-lucide="bug-off" class="w-10 h-10 mx-auto mb-3 text-gold"></i>
+                    <p class="font-semibold">Mosquitoes</p>
+                </div>
+                <div class="bg-white border-2 border-gray-200 p-6 rounded-lg text-center hover:border-gold transition">
+                    <i data-lucide="bug" class="w-10 h-10 mx-auto mb-3 text-gold"></i>
+                    <p class="font-semibold">Termites</p>
+                </div>
+                <div class="bg-white border-2 border-gray-200 p-6 rounded-lg text-center hover:border-gold transition">
+                    <i data-lucide="bug" class="w-10 h-10 mx-auto mb-3 text-gold"></i>
+                    <p class="font-semibold">Flies</p>
+                </div>
+                <div class="bg-white border-2 border-gray-200 p-6 rounded-lg text-center hover:border-gold transition">
+                    <i data-lucide="bug" class="w-10 h-10 mx-auto mb-3 text-gold"></i>
+                    <p class="font-semibold">Wasps & Bees</p>
+                </div>
+                <div class="bg-white border-2 border-gray-200 p-6 rounded-lg text-center hover:border-gold transition">
+                    <i data-lucide="bug" class="w-10 h-10 mx-auto mb-3 text-gold"></i>
+                    <p class="font-semibold">Silverfish</p>
+                </div>
+                <div class="bg-white border-2 border-gray-200 p-6 rounded-lg text-center hover:border-gold transition">
+                    <i data-lucide="more-horizontal" class="w-10 h-10 mx-auto mb-3 text-gold"></i>
+                    <p class="font-semibold">& More</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <a href="services.html" class="inline-block bg-gold text-white px-8 py-3 rounded-lg font-semibold hover:bg-gold-light transition">
+                    View All Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TRUSTED BY ========== -->
+    <section class="py-16 bg-gray-900 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl md:text-4xl font-bold mb-4">Trusted By Leading Organizations</h3>
+                <p class="text-gray-400">500+ residential homes and businesses across Gauteng</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6 text-center">
+                <div>
+                    <i data-lucide="building-2" class="w-12 h-12 mx-auto mb-3 text-gold"></i>
+                    <p class="text-sm text-gray-400">Lime Tree Restaurants</p>
+                </div>
+                <div>
+                    <i data-lucide="school" class="w-12 h-12 mx-auto mb-3 text-gold"></i>
+                    <p class="text-sm text-gray-400">University of Johannesburg</p>
+                </div>
+                <div>
+                    <i data-lucide="home" class="w-12 h-12 mx-auto mb-3 text-gold"></i>
+                    <p class="text-sm text-gray-400">Urban Ridge Apartments</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA SECTION ========== -->
+    <section class="py-16 bg-gold text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-3xl md:text-4xl font-bold mb-4">Ready to Get Rid of Pests?</h3>
+            <p class="text-lg mb-8 max-w-2xl mx-auto">Don't let unwanted guests ruin your peace. Contact us today for a free quote and same-day service.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="bg-white text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition">
+                    Request Free Quote
+                </a>
+                <a href="tel:0768367329" class="bg-gray-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition">
+                    Call: 076 836 7329
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <img src="assets/img/logo-gold.png" alt="Dikwena Logo" class="h-12 mb-4">
+                    <p class="text-sm text-gray-400">Going Beyond Expectations. Professional pest control services across Gauteng Province.</p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="index.html" class="hover:text-gold">Home</a></li>
+                        <li><a href="about.html" class="hover:text-gold">About Us</a></li>
+                        <li><a href="services.html" class="hover:text-gold">Services</a></li>
+                        <li><a href="contact.html" class="hover:text-gold">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h4 class="font-bold mb-4">Our Services</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>Cockroach Control</li>
+                        <li>Bed Bug Treatment</li>
+                        <li>Rodent Extermination</li>
+                        <li>Termite Control</li>
+                        <li>General Fumigation</li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-bold mb-4">Contact Us</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                            <a href="tel:0768367329" class="hover:text-gold">076 836 7329</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                            <a href="tel:0813200898" class="hover:text-gold">081 320 0898</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            <a href="mailto:dikwenap@gmail.com" class="hover:text-gold">dikwenap@gmail.com</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="map-pin" class="w-4 h-4"></i>
+                            <span>Midrand, Gauteng</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2025 Dikwena Trading and Projects (PTY) LTD. All rights reserved. | Reg: 2024/607422/07</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== FLOATING WHATSAPP BUTTON ========== -->
+    <a href="https://wa.me/27768367329" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition float-animation z-50">
+        <i data-lucide="message-circle" class="w-6 h-6"></i>
+    </a>
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+        
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
