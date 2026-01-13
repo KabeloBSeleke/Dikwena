@@ -27,6 +27,95 @@
             50% { transform: translateY(-10px); }
         }
         .float-animation { animation: float 3s ease-in-out infinite; }
+
+        /* ========== DARK MODE STYLES ========== */
+        .dark {
+            --bg-primary: #0F172A;
+            --bg-secondary: #1E293B;
+            --bg-card: #334155;
+            --text-primary: #F1F5F9;
+            --text-secondary: #CBD5E1;
+            --border: #475569;
+        }
+
+        .dark {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        .dark header,
+        .dark footer {
+            background-color: var(--bg-secondary) !important;
+            border-color: var(--border);
+        }
+
+        .dark .bg-white {
+            background-color: var(--bg-card) !important;
+            color: var(--text-primary);
+        }
+
+        .dark .bg-gray-50 {
+            background-color: var(--bg-secondary) !important;
+        }
+
+        .dark .bg-gray-100 {
+            background-color: var(--bg-card) !important;
+        }
+
+        .dark .bg-gray-900 {
+            background-color: var(--bg-primary) !important;
+        }
+
+        .dark .text-gray-600,
+        .dark .text-gray-700 {
+            color: var(--text-secondary) !important;
+        }
+
+        .dark .text-gray-900 {
+            color: var(--text-primary) !important;
+        }
+
+        .dark .border-gray-200,
+        .dark .border-gray-300 {
+            border-color: var(--border) !important;
+        }
+
+        .dark .shadow-lg,
+        .dark .shadow-md {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .dark input,
+        .dark textarea,
+        .dark select {
+            background-color: var(--bg-secondary);
+            border-color: var(--border);
+            color: var(--text-primary);
+        }
+
+        .dark input::placeholder,
+        .dark textarea::placeholder {
+            color: var(--text-secondary);
+            opacity: 0.7;
+        }
+
+        body, header, footer,
+        .bg-white, .bg-gray-50, .bg-gray-100,
+        input, textarea, select {
+            transition: background-color 0.3s ease, 
+                        color 0.3s ease, 
+                        border-color 0.3s ease;
+        }
+
+        #dark-mode-toggle,
+        #dark-mode-toggle-mobile {
+            transition: transform 0.3s ease;
+        }
+
+        #dark-mode-toggle:hover,
+        #dark-mode-toggle-mobile:hover {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body class="font-sans antialiased">
@@ -49,16 +138,43 @@
                 <li><a href="contact.html" class="hover:text-gold transition">Contact</a></li>
             </ul>
             
-            <a href="contact.html" class="hidden md:inline-block bg-gold text-white px-6 py-3 rounded-lg font-semibold hover:bg-gold-light transition">
-                Request Quote
-            </a>
+            <!-- Right side buttons (Desktop) -->
+            <div class="hidden md:flex items-center gap-4">
+                <!-- Dark Mode Toggle -->
+                <button 
+                    id="dark-mode-toggle" 
+                    class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+                    aria-label="Toggle dark mode"
+                    title="Switch theme">
+                    <i data-lucide="sun" class="w-5 h-5 hidden dark:block text-gold"></i>
+                    <i data-lucide="moon" class="w-5 h-5 block dark:hidden text-gray-700 dark:text-gray-300"></i>
+                </button>
+                
+                <!-- CTA Button -->
+                <a href="contact.html" class="bg-gold text-white px-6 py-3 rounded-lg font-semibold hover:bg-gold-light transition">
+                    Request Quote
+                </a>
+            </div>
             
-            <button id="mobile-menu-btn" class="md:hidden text-gray-700">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
+                        <div class="md:hidden flex items-center gap-2">
+                <!-- Dark Mode Toggle (Mobile) -->
+                <button 
+                    id="dark-mode-toggle-mobile" 
+                    class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+                    aria-label="Toggle dark mode"
+                    title="Switch theme">
+                    <i data-lucide="sun" class="w-5 h-5 hidden dark:block text-gold"></i>
+                    <i data-lucide="moon" class="w-5 h-5 block dark:hidden text-gray-700 dark:text-gray-300"></i>
+                </button>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="text-gray-700 dark:text-gray-300">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
         </nav>
         
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 border-t dark:border-gray-700">
             <ul class="flex flex-col space-y-4 px-4 py-6 text-sm font-medium">
                 <li><a href="index.html" class="block hover:text-gold">Home</a></li>
                 <li><a href="about.html" class="block hover:text-gold">About Us</a></li>
@@ -567,13 +683,60 @@
     </a>
 
     <script>
+                // Initialize Lucide Icons
         lucide.createIcons();
         
+        // ========== MOBILE MENU ==========
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // ========== DARK MODE ==========
+        function setDarkMode(isDark) {
+            if (isDark) {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('darkMode', 'disabled');
+            }
+            lucide.createIcons();
+        }
+
+        function initDarkMode() {
+            const savedMode = localStorage.getItem('darkMode');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            if (savedMode === 'enabled' || (savedMode === null && systemPrefersDark)) {
+                setDarkMode(true);
+            }
+        }
+
+        // Initialize dark mode immediately
+        initDarkMode();
+
+        // Setup toggle buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleBtn = document.getElementById('dark-mode-toggle');
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', function() {
+                    const isDarkMode = document.documentElement.classList.contains('dark');
+                    setDarkMode(!isDarkMode);
+                });
+            }
+            
+            const toggleBtnMobile = document.getElementById('dark-mode-toggle-mobile');
+            if (toggleBtnMobile) {
+                toggleBtnMobile.addEventListener('click', function() {
+                    const isDarkMode = document.documentElement.classList.contains('dark');
+                    setDarkMode(!isDarkMode);
+                });
+            }
         });
     </script>
 </body>
