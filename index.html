@@ -22,9 +22,21 @@
             --gold-dark: #8B7355;
             --black: #1A1A1A;
             --cream: #F5E6D3;
+            /* Metallic Gold Gradient Variable */
+            --gold-gradient: linear-gradient(
+                45deg, 
+                #8B7355 0%, 
+                #B8964A 25%, 
+                #F5E6D3 50%, 
+                #D4AF37 75%, 
+                #8B7355 100%
+            );
         }
         
+        
+
         .bg-gold { background-color: var(--gold); }
+        .bg-gold-gradient { background-color: var(--gold-gradient); }
         .bg-gold-light { background-color: var(--gold-light); }
         .text-gold { color: var(--gold); }
         .text-gold-light { color: var(--gold-light); }
