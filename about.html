@@ -3,457 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about Dikwena Pest Control - Founded in 2024, we are certified pest control experts serving Gauteng with safe, effective solutions.">
+    <meta name="description" content="Learn about Dikwena Pest Control - Founded in 2024, certified experts serving Gauteng with safe, effective solutions.">
     <title>About Us | Dikwena Pest Control</title>
-    
+    <link rel="icon" type="image/png" href="assets/img/logo-gold.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <style>
-        :root {
-            --gold: #B8964A;
-            --gold-light: #D4AF37;
-            --gold-dark: #8B7355;
-            --black: #1A1A1A;
-            --cream: #F5E6D3;
-        }
-        .bg-gold { background-color: var(--gold); }
-        .bg-gold-light { background-color: var(--gold-light); }
-        .text-gold { color: var(--gold); }
-        .text-gold-light { color: var(--gold-light); }
-        html { scroll-behavior: smooth; }
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        .float-animation { animation: float 3s ease-in-out infinite; }
-
-        /* ========== DARK MODE STYLES ========== */
-        .dark {
-            --bg-primary: #0F172A;
-            --bg-secondary: #1E293B;
-            --bg-card: #334155;
-            --text-primary: #F1F5F9;
-            --text-secondary: #CBD5E1;
-            --border: #475569;
-        }
-
-        .dark {
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-        }
-
-        .dark header,
-        .dark footer {
-            background-color: var(--bg-secondary) !important;
-            border-color: var(--border);
-        }
-
-        .dark .bg-white {
-            background-color: var(--bg-card) !important;
-            color: var(--text-primary);
-        }
-
-        .dark .bg-gray-50 {
-            background-color: var(--bg-secondary) !important;
-        }
-
-        .dark .bg-gray-100 {
-            background-color: var(--bg-card) !important;
-        }
-
-        .dark .bg-gray-900 {
-            background-color: var(--bg-primary) !important;
-        }
-
-        .dark .text-gray-600,
-        .dark .text-gray-700 {
-            color: var(--text-secondary) !important;
-        }
-
-        .dark .text-gray-900 {
-            color: var(--text-primary) !important;
-        }
-
-        .dark .border-gray-200,
-        .dark .border-gray-300 {
-            border-color: var(--border) !important;
-        }
-
-        .dark .shadow-lg,
-        .dark .shadow-md {
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-        }
-
-        .dark input,
-        .dark textarea,
-        .dark select {
-            background-color: var(--bg-secondary);
-            border-color: var(--border);
-            color: var(--text-primary);
-        }
-
-        .dark input::placeholder,
-        .dark textarea::placeholder {
-            color: var(--text-secondary);
-            opacity: 0.7;
-        }
-
-        body, header, footer,
-        .bg-white, .bg-gray-50, .bg-gray-100,
-        input, textarea, select {
-            transition: background-color 0.3s ease, 
-                        color 0.3s ease, 
-                        border-color 0.3s ease;
-        }
-
-        #dark-mode-toggle,
-        #dark-mode-toggle-mobile {
-            transition: transform 0.3s ease;
-        }
-
-        #dark-mode-toggle:hover,
-        #dark-mode-toggle-mobile:hover {
-            transform: scale(1.1);
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="font-sans antialiased">
-
-    <!-- ========== HEADER ========== -->
-    <header class="sticky top-0 z-50 bg-white shadow-md">
-        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <img src="assets/img/logo-gold.png" alt="Dikwena Logo" class="h-12 md:h-16">
-                <div class="hidden md:block">
-                    <h1 class="text-xl font-bold" style="color: var(--gold);">DIKWENA</h1>
-                    <p class="text-xs text-gray-600">Trading and Projects</p>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="assets/img/logo-gold.png" alt="Dikwena Logo">
+                <div class="logo-text">
+                    <h1>DIKWENA</h1>
+                    <p>Trading and Projects</p>
                 </div>
             </div>
-            
-            <ul class="hidden md:flex space-x-8 text-sm font-medium">
-                <li><a href="index.html" class="hover:text-gold transition">Home</a></li>
-                <li><a href="about.html" class="text-gold transition">About Us</a></li>
-                <li><a href="services.html" class="hover:text-gold transition">Services</a></li>
-                <li><a href="contact.html" class="hover:text-gold transition">Contact</a></li>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
-            
-            <!-- Right side buttons (Desktop) -->
-            <div class="hidden md:flex items-center gap-4">
-                <!-- Dark Mode Toggle -->
-                <button 
-                    id="dark-mode-toggle" 
-                    class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition"
-                    aria-label="Toggle dark mode"
-                    title="Switch theme">
+            <div class="nav-actions">
+                <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">
                     <i data-lucide="sun" class="w-5 h-5 hidden dark:block text-gold"></i>
-                    <i data-lucide="moon" class="w-5 h-5 block dark:hidden text-gray-700 dark:text-gray-300"></i>
+                    <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
                 </button>
-                
-                <!-- CTA Button -->
-                <a href="contact.html" class="bg-gold text-white px-6 py-3 rounded-lg font-semibold hover:bg-gold-light transition">
-                    Request Quote
-                </a>
-            </div>
-            
-                        <div class="md:hidden flex items-center gap-2">
-                <!-- Dark Mode Toggle (Mobile) -->
-                <button 
-                    id="dark-mode-toggle-mobile" 
-                    class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition"
-                    aria-label="Toggle dark mode"
-                    title="Switch theme">
-                    <i data-lucide="sun" class="w-5 h-5 hidden dark:block text-gold"></i>
-                    <i data-lucide="moon" class="w-5 h-5 block dark:hidden text-gray-700 dark:text-gray-300"></i>
-                </button>
-                
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="text-gray-700 dark:text-gray-300">
+                <button class="btn-primary" data-modal="quote">Request Quote</button>
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
         </nav>
-        
-        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 border-t dark:border-gray-700">
-            <ul class="flex flex-col space-y-4 px-4 py-6 text-sm font-medium">
-                <li><a href="index.html" class="block hover:text-gold">Home</a></li>
-                <li><a href="about.html" class="block text-gold">About Us</a></li>
-                <li><a href="services.html" class="block hover:text-gold">Services</a></li>
-                <li><a href="contact.html" class="block hover:text-gold">Contact</a></li>
-                <li><a href="contact.html" class="block bg-gold text-white px-6 py-3 rounded-lg text-center">Request Quote</a></li>
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button class="btn-primary w-full" data-modal="quote">Request Quote</button></li>
             </ul>
         </div>
     </header>
 
-    <!-- ========== PAGE HERO ========== -->
-    <section class="bg-gray-900 text-white py-16 md:py-24">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-4">About Dikwena Pest Control</h2>
-            <p class="text-lg text-gray-300 max-w-2xl mx-auto">Going beyond expectations since 2024 - Your trusted partner in pest-free living</p>
+    <section style="background: var(--black); color: white; padding: 8rem 0 6rem; text-align: center; margin-top: 5rem;">
+        <div class="container">
+            <h2 style="color: white; margin-bottom: 1rem;">About Dikwena Pest Control</h2>
+            <p style="color: rgba(255,255,255,0.8); font-size: 1.125rem;">Going beyond expectations since 2024</p>
         </div>
     </section>
 
-    <!-- ========== OUR STORY ========== -->
-    <section class="py-16">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h3 class="text-3xl font-bold mb-6">Our Story</h3>
-                    <p class="text-gray-700 mb-4">
-                        Founded in July 2024 by Leshabane Mabina and Leshabane Phumza, Dikwena Pest Control was born from a vision to provide safe, reliable, and professional pest control services to the people of Gauteng.
-                    </p>
-                    <p class="text-gray-700 mb-4">
-                        With over two years of hands-on experience as a Pest Control Officer at Hanani Pest Control, founder Leshabane Mabina brings certified expertise and a deep understanding of effective pest management. As a qualified PCO with a practice number registered under the Department of Agriculture, we ensure every service meets the highest industry standards.
-                    </p>
-                    <p class="text-gray-700">
-                        Since our inception, we have received overwhelming support from businesses, homeowners, landlords, and tenants across Gauteng Province. Our commitment to excellence and customer satisfaction has earned us great reviews through social media and countless referrals.
-                    </p>
+    <section>
+        <div class="container">
+            <div class="grid-2" style="align-items: center;">
+                <div class="scroll-reveal">
+                    <h3>Our Story</h3>
+                    <p style="margin-bottom: 1rem;">Founded in July 2024 by Leshabane Mabina and Leshabane Phumza, Dikwena Pest Control was born from a vision to provide safe, reliable, and professional pest control services to the people of Gauteng.</p>
+                    <p style="margin-bottom: 1rem;">With over two years of hands-on experience as a Pest Control Officer at Hanani Pest Control, founder Leshabane Mabina brings certified expertise and a deep understanding of effective pest management.</p>
+                    <p>Since our inception, we have received overwhelming support from businesses, homeowners, landlords, and tenants across Gauteng Province. Our commitment to excellence has earned us great reviews and countless referrals.</p>
                 </div>
-                
-                <div class="grid grid-cols-2 gap-4">
-                    <img src="assets/img/team-1.jpeg" alt="Pest control team member in protective suit" class="rounded-lg shadow-lg w-full h-64 object-cover">
-                    <img src="assets/img/team-2.png" alt="Professional pest control equipment" class="rounded-lg shadow-lg w-full h-64 object-cover">
+                <div class="scroll-reveal" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <img src="assets/img/team-1.jpeg" alt="Team member" style="width: 100%; height: 250px; object-fit: cover; border-radius: 20px; box-shadow: var(--shadow-lg);">
+                    <img src="assets/img/team-2.png" alt="Equipment" style="width: 100%; height: 250px; object-fit: cover; border-radius: 20px; box-shadow: var(--shadow-lg);">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========== MEET THE TEAM ========== -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h3 class="text-3xl md:text-4xl font-bold mb-4">Meet Our Professional Team</h3>
-                <p class="text-gray-600 max-w-2xl mx-auto">Certified experts dedicated to protecting your home and business with safe, effective pest control solutions</p>
+    <section style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h3>Meet Our Professional Team</h3>
+                <p>Certified experts dedicated to protecting your home and business</p>
             </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Team Photo 1 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="assets/img/team-action-1.jpeg" alt="Team in hazmat suits" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold mb-2">Certified Professionals</h4>
-                        <p class="text-gray-600">Our team undergoes rigorous training and holds official certifications from the Department of Agriculture.</p>
-                    </div>
+            <div class="grid-3">
+                <div class="card scroll-reveal">
+                    <img src="assets/img/team-action-1.jpeg" alt="Certified Professionals" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1rem;">
+                    <h4>Certified Professionals</h4>
+                    <p>Our team holds official certifications from the Department of Agriculture.</p>
                 </div>
-                
-                <!-- Team Photo 2 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="assets/img/team-action-2.png" alt="Team with equipment" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold mb-2">Advanced Equipment</h4>
-                        <p class="text-gray-600">We use industry-leading tools and approved chemicals to ensure maximum effectiveness and safety.</p>
-                    </div>
+                <div class="card scroll-reveal">
+                    <img src="assets/img/team-action-2.png" alt="Advanced Equipment" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1rem;">
+                    <h4>Advanced Equipment</h4>
+                    <p>We use industry-leading tools and approved chemicals for maximum effectiveness.</p>
                 </div>
-                
-                <!-- Team Photo 3 -->
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="assets/img/team-action-3.png" alt="Team member working" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h4 class="text-xl font-bold mb-2">Meticulous Process</h4>
-                        <p class="text-gray-600">Every job is approached with precision, care, and attention to detail to deliver lasting results.</p>
-                    </div>
+                <div class="card scroll-reveal">
+                    <img src="assets/img/team-action-3.png" alt="Meticulous Process" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1rem;">
+                    <h4>Meticulous Process</h4>
+                    <p>Every job is approached with precision, care, and attention to detail.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========== VISION & MISSION ========== -->
-    <section class="py-16">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Vision -->
-                <div class="bg-gold text-white p-8 rounded-lg">
-                    <div class="flex items-center gap-4 mb-4">
+    <section>
+        <div class="container">
+            <div class="grid-2">
+                <div class="card scroll-reveal" style="background: var(--gold-gradient); color: white; padding: 3rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
                         <i data-lucide="eye" class="w-12 h-12"></i>
-                        <h3 class="text-2xl font-bold">Our Vision</h3>
+                        <h3 style="color: white;">Our Vision</h3>
                     </div>
-                    <p class="text-lg">
-                        Dikwena Trading and Projects strives to be the most trusted and reliable pest control business in South Africa by 2030. We aim to be the preferred choice amongst our competitors, setting the standard for excellence in the industry.
-                    </p>
+                    <p style="color: white; font-size: 1.125rem;">Dikwena Trading and Projects strives to be the most trusted and reliable pest control business in South Africa by 2030.</p>
                 </div>
-                
-                <!-- Mission -->
-                <div class="bg-gray-900 text-white p-8 rounded-lg">
-                    <div class="flex items-center gap-4 mb-4">
+                <div class="card scroll-reveal" style="background: var(--black); color: white; padding: 3rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
                         <i data-lucide="target" class="w-12 h-12"></i>
-                        <h3 class="text-2xl font-bold">Our Mission</h3>
+                        <h3 style="color: white;">Our Mission</h3>
                     </div>
-                    <p class="text-lg">
-                        To maintain great relationships with our reliable suppliers and committed workforce while providing excellent service to our valuable customers. We continuously invest in delivering peace of mind to families and businesses through research and growth.
-                    </p>
+                    <p style="color: white; font-size: 1.125rem;">To maintain great relationships while providing excellent service and peace of mind to families and businesses.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========== OUR VALUES ========== -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h3 class="text-3xl md:text-4xl font-bold mb-4">What Sets Us Apart</h3>
+    <section style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <h3>What Sets Us Apart</h3>
             </div>
-            
-            <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <div class="bg-white p-6 rounded-lg shadow text-center">
-                    <div class="inline-flex items-center justify-center w-14 h-14 bg-gold rounded-full mb-4">
-                        <i data-lucide="shield-check" class="w-7 h-7 text-white"></i>
-                    </div>
-                    <h4 class="font-bold mb-2">100% Safe</h4>
-                    <p class="text-sm text-gray-600">Harmless, odorless, and colorless products approved by authorities</p>
+            <div class="grid-4">
+                <div class="card scroll-reveal" style="text-align: center;">
+                    <div class="card-icon" style="margin-left: auto; margin-right: auto;"><i data-lucide="shield-check"></i></div>
+                    <h4>100% Safe</h4>
+                    <p>Harmless, odorless products approved by authorities</p>
                 </div>
-                
-                <div class="bg-white p-6 rounded-lg shadow text-center">
-                    <div class="inline-flex items-center justify-center w-14 h-14 bg-gold rounded-full mb-4">
-                        <i data-lucide="award" class="w-7 h-7 text-white"></i>
-                    </div>
-                    <h4 class="font-bold mb-2">Certified</h4>
-                    <p class="text-sm text-gray-600">Qualified PCO with Department of Agriculture practice number</p>
+                <div class="card scroll-reveal">
+                    <div class="card-icon" style="margin-left: auto; margin-right: auto;"><i data-lucide="award"></i></div>
+                    <h4>Certified</h4>
+                    <p>Qualified PCO with Department of Agriculture practice number</p>
                 </div>
-                
-                <div class="bg-white p-6 rounded-lg shadow text-center">
-                    <div class="inline-flex items-center justify-center w-14 h-14 bg-gold rounded-full mb-4">
-                        <i data-lucide="dollar-sign" class="w-7 h-7 text-white"></i>
-                    </div>
-                    <h4 class="font-bold mb-2">Affordable</h4>
-                    <p class="text-sm text-gray-600">Competitive pricing without compromising on quality</p>
+                <div class="card scroll-reveal">
+                    <div class="card-icon" style="margin-left: auto; margin-right: auto;"><i data-lucide="dollar-sign"></i></div>
+                    <h4>Affordable</h4>
+                    <p>Competitive pricing without compromising quality</p>
                 </div>
-                
-                <div class="bg-white p-6 rounded-lg shadow text-center">
-                    <div class="inline-flex items-center justify-center w-14 h-14 bg-gold rounded-full mb-4">
-                        <i data-lucide="users" class="w-7 h-7 text-white"></i>
-                    </div>
-                    <h4 class="font-bold mb-2">Experienced</h4>
-                    <p class="text-sm text-gray-600">Well-trained, knowledgeable, and dedicated staff</p>
+                <div class="card scroll-reveal">
+                    <div class="card-icon" style="margin-left: auto; margin-right: auto;"><i data-lucide="users"></i></div>
+                    <h4>Experienced</h4>
+                    <p>Well-trained, knowledgeable staff</p>
                 </div>
-                
-                <div class="bg-white p-6 rounded-lg shadow text-center">
-                    <div class="inline-flex items-center justify-center w-14 h-14 bg-gold rounded-full mb-4">
-                        <i data-lucide="star" class="w-7 h-7 text-white"></i>
-                    </div>
-                    <h4 class="font-bold mb-2">Quality Service</h4>
-                    <p class="text-sm text-gray-600">Going beyond expectations on every project</p>
+                <div class="card scroll-reveal">
+                    <div class="card-icon" style="margin-left: auto; margin-right: auto;"><i data-lucide="star"></i></div>
+                    <h4>Quality Service</h4>
+                    <p>Going beyond expectations</p>
                 </div>
-                
-                <div class="bg-white p-6 rounded-lg shadow text-center">
-                    <div class="inline-flex items-center justify-center w-14 h-14 bg-gold rounded-full mb-4">
-                        <i data-lucide="file-text" class="w-7 h-7 text-white"></i>
-                    </div>
-                    <h4 class="font-bold mb-2">Certified Reports</h4>
-                    <p class="text-sm text-gray-600">Treatment reports and certificates provided</p>
+                <div class="card scroll-reveal">
+                    <div class="card-icon" style="margin-left: auto; margin-right: auto;"><i data-lucide="file-text"></i></div>
+                    <h4>Certified Reports</h4>
+                    <p>Treatment reports provided</p>
                 </div>
-                
-                <div class="bg-white p-6 rounded-lg shadow text-center">
-                    <div class="inline-flex items-center justify-center w-14 h-14 bg-gold rounded-full mb-4">
-                        <i data-lucide="heart" class="w-7 h-7 text-white"></i>
-                    </div>
-                    <h4 class="font-bold mb-2">Community Focus</h4>
-                    <p class="text-sm text-gray-600">Giving back to communities we serve</p>
+                <div class="card scroll-reveal">
+                    <div class="card-icon" style="margin-left: auto; margin-right: auto;"><i data-lucide="heart"></i></div>
+                    <h4>Community Focus</h4>
+                    <p>Giving back to communities</p>
                 </div>
-                
-                <div class="bg-white p-6 rounded-lg shadow text-center">
-                    <div class="inline-flex items-center justify-center w-14 h-14 bg-gold rounded-full mb-4">
-                        <i data-lucide="trending-up" class="w-7 h-7 text-white"></i>
-                    </div>
-                    <h4 class="font-bold mb-2">50% Women-Owned</h4>
-                    <p class="text-sm text-gray-600">Empowering diversity in business</p>
+                <div class="card scroll-reveal">
+                    <div class="card-icon" style="margin-left: auto; margin-right: auto;"><i data-lucide="trending-up"></i></div>
+                    <h4>50% Women-Owned</h4>
+                    <p>Empowering diversity</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========== CLIENTS WE'VE SERVED ========== -->
-    <section class="py-16">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h3 class="text-3xl md:text-4xl font-bold mb-4">Trusted By Leading Organizations</h3>
-                <p class="text-gray-600">We've successfully served 500+ residential homes and businesses across Gauteng</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="bg-gray-50 p-4 rounded-lg flex items-center gap-3">
-                    <i data-lucide="building-2" class="w-8 h-8 text-gold"></i>
-                    <div>
-                        <p class="font-semibold">Lime Tree Restaurants</p>
-                        <p class="text-xs text-gray-500">Laudium & Centurion</p>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-50 p-4 rounded-lg flex items-center gap-3">
-                    <i data-lucide="school" class="w-8 h-8 text-gold"></i>
-                    <div>
-                        <p class="font-semibold">University of Johannesburg</p>
-                        <p class="text-xs text-gray-500">Soweto Residence</p>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-50 p-4 rounded-lg flex items-center gap-3">
-                    <i data-lucide="home" class="w-8 h-8 text-gold"></i>
-                    <div>
-                        <p class="font-semibold">Urban Ridge Apartments</p>
-                        <p class="text-xs text-gray-500">West, East & South, Midrand</p>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-50 p-4 rounded-lg flex items-center gap-3">
-                    <i data-lucide="briefcase" class="w-8 h-8 text-gold"></i>
-                    <div>
-                        <p class="font-semibold">Gugu Financial Services</p>
-                        <p class="text-xs text-gray-500">Boulders Complex, Midrand</p>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-50 p-4 rounded-lg flex items-center gap-3">
-                    <i data-lucide="building" class="w-8 h-8 text-gold"></i>
-                    <div>
-                        <p class="font-semibold">Waterfall Crest</p>
-                        <p class="text-xs text-gray-500">Midrand</p>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-50 p-4 rounded-lg flex items-center gap-3">
-                    <i data-lucide="utensils" class="w-8 h-8 text-gold"></i>
-                    <div>
-                        <p class="font-semibold">Mobile Kitchens & Restaurants</p>
-                        <p class="text-xs text-gray-500">Centurion, Joburg, Pretoria</p>
-                    </div>
-                </div>
-            </div>
+    <section style="background: var(--gold-gradient); color: white; text-align: center;">
+        <div class="container">
+            <h3 class="scroll-reveal" style="color: white;">Ready to Experience the Dikwena Difference?</h3>
+            <p class="scroll-reveal" style="color: white; font-size: 1.125rem; margin-bottom: 2rem;">Join hundreds of satisfied customers across Gauteng. Get your free quote today.</p>
+            <button class="btn-secondary scroll-reveal" data-modal="quote">Contact Us Today</button>
         </div>
     </section>
 
-    <!-- ========== CTA ========== -->
-    <section class="py-16 bg-gold text-white">
-        <div class="container mx-auto px-4 text-center">
-            <h3 class="text-3xl md:text-4xl font-bold mb-4">Ready to Experience the Dikwena Difference?</h3>
-            <p class="text-lg mb-8 max-w-2xl mx-auto">Join hundreds of satisfied customers across Gauteng. Get your free quote today.</p>
-            <a href="contact.html" class="inline-block bg-white text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition">
-                Contact Us Today
-            </a>
-        </div>
-    </section>
-
-    <!-- ========== FOOTER ========== -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <img src="assets/img/logo-gold.png" alt="Dikwena Logo" class="h-12 mb-4">
-                    <p class="text-sm text-gray-400">Going Beyond Expectations. Professional pest control services across Gauteng Province.</p>
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <img src="assets/img/logo-gold.png" alt="Dikwena Logo" style="height: 3rem; margin-bottom: 1rem;">
+                    <p>Going Beyond Expectations. Professional pest control services across Gauteng Province.</p>
                 </div>
-                
-                <div>
-                    <h4 class="font-bold mb-4">Quick Links</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="index.html" class="hover:text-gold">Home</a></li>
-                        <li><a href="about.html" class="hover:text-gold">About Us</a></li>
-                        <li><a href="services.html" class="hover:text-gold">Services</a></li>
-                        <li><a href="contact.html" class="hover:text-gold">Contact</a></li>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                
-                <div>
-                    <h4 class="font-bold mb-4">Our Services</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
+                <div class="footer-section">
+                    <h4>Our Services</h4>
+                    <ul style="list-style: none;">
                         <li>Cockroach Control</li>
                         <li>Bed Bug Treatment</li>
                         <li>Rodent Extermination</li>
@@ -461,97 +203,78 @@
                         <li>General Fumigation</li>
                     </ul>
                 </div>
-                
-                <div>
-                    <h4 class="font-bold mb-4">Contact Us</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li class="flex items-center gap-2">
-                            <i data-lucide="phone" class="w-4 h-4"></i>
-                            <a href="tel:0768367329" class="hover:text-gold">076 836 7329</a>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i data-lucide="phone" class="w-4 h-4"></i>
-                            <a href="tel:0813200898" class="hover:text-gold">081 320 0898</a>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i data-lucide="mail" class="w-4 h-4"></i>
-                            <a href="mailto:dikwenap@gmail.com" class="hover:text-gold">dikwenap@gmail.com</a>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i data-lucide="map-pin" class="w-4 h-4"></i>
-                            <span>Midrand, Gauteng</span>
-                        </li>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <ul style="list-style: none;">
+                        <li style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;"><i data-lucide="phone" class="w-4 h-4"></i><a href="tel:0768367329">076 836 7329</a></li>
+                        <li style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;"><i data-lucide="mail" class="w-4 h-4"></i><a href="mailto:dikwenap@gmail.com">dikwenap@gmail.com</a></li>
+                        <li style="display: flex; gap: 0.5rem;"><i data-lucide="map-pin" class="w-4 h-4"></i><span>Midrand, Gauteng</span></li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+            <div class="footer-bottom">
                 <p>&copy; 2025 Dikwena Trading and Projects (PTY) LTD. All rights reserved. | Reg: 2024/607422/07</p>
             </div>
         </div>
     </footer>
 
-    <!-- ========== FLOATING WHATSAPP ========== -->
-    <a href="https://wa.me/27768367329" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition float-animation z-50">
-        <i data-lucide="message-circle" class="w-6 h-6"></i>
+    <a href="https://wa.me/27768367329" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i data-lucide="message-circle"></i>
     </a>
 
-    <script>
-                // Initialize Lucide Icons
-        lucide.createIcons();
-        
-        // ========== MOBILE MENU ==========
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        if (mobileMenuBtn && mobileMenu) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-        }
+    <div class="modal-overlay" id="quote-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Request a Free Quote</h3>
+                <button class="modal-close" aria-label="Close modal"><i data-lucide="x"></i></button>
+            </div>
+            <form id="quote-form">
+                <div class="form-group">
+                    <label class="form-label">Full Name *</label>
+                    <input type="text" name="name" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Phone Number *</label>
+                    <input type="tel" name="phone" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email Address *</label>
+                    <input type="email" name="email" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Property Type *</label>
+                    <select name="property_type" class="form-select" required>
+                        <option value="">Select property type</option>
+                        <option value="residential">Residential Home</option>
+                        <option value="apartment">Apartment/Flat</option>
+                        <option value="restaurant">Restaurant</option>
+                        <option value="office">Office/Commercial</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Pest Problem *</label>
+                    <select name="pest_type" class="form-select" required>
+                        <option value="">Select pest type</option>
+                        <option value="cockroaches">Cockroaches</option>
+                        <option value="bedbugs">Bed Bugs</option>
+                        <option value="rodents">Rodents</option>
+                        <option value="termites">Termites</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Location *</label>
+                    <input type="text" name="location" class="form-input" placeholder="e.g., Midrand" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Additional Details</label>
+                    <textarea name="message" class="form-textarea"></textarea>
+                </div>
+                <button type="submit" class="btn-primary w-full">Submit Request</button>
+            </form>
+        </div>
+    </div>
 
-        // ========== DARK MODE ==========
-        function setDarkMode(isDark) {
-            if (isDark) {
-                document.documentElement.classList.add('dark');
-                localStorage.setItem('darkMode', 'enabled');
-            } else {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('darkMode', 'disabled');
-            }
-            lucide.createIcons();
-        }
-
-        function initDarkMode() {
-            const savedMode = localStorage.getItem('darkMode');
-            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            
-            if (savedMode === 'enabled' || (savedMode === null && systemPrefersDark)) {
-                setDarkMode(true);
-            }
-        }
-
-        // Initialize dark mode immediately
-        initDarkMode();
-
-        // Setup toggle buttons
-        document.addEventListener('DOMContentLoaded', function() {
-            const toggleBtn = document.getElementById('dark-mode-toggle');
-            if (toggleBtn) {
-                toggleBtn.addEventListener('click', function() {
-                    const isDarkMode = document.documentElement.classList.contains('dark');
-                    setDarkMode(!isDarkMode);
-                });
-            }
-            
-            const toggleBtnMobile = document.getElementById('dark-mode-toggle-mobile');
-            if (toggleBtnMobile) {
-                toggleBtnMobile.addEventListener('click', function() {
-                    const isDarkMode = document.documentElement.classList.contains('dark');
-                    setDarkMode(!isDarkMode);
-                });
-            }
-        });
-    </script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

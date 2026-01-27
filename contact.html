@@ -3,260 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Dikwena Pest Control - Get your free quote today. Call 076 836 7329 or fill out our contact form for fast, professional pest control services.">
+    <meta name="description" content="Contact Dikwena Pest Control - Get your free quote today. Call 076 836 7329 for fast, professional service.">
     <title>Contact Us | Dikwena Pest Control</title>
-    
+    <link rel="icon" type="image/png" href="assets/img/logo-gold.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <style>
-        :root {
-            --gold: #B8964A;
-            --gold-light: #D4AF37;
-            --gold-dark: #8B7355;
-            --black: #1A1A1A;
-            --cream: #F5E6D3;
-        }
-        .bg-gold { background-color: var(--gold); }
-        .bg-gold-light { background-color: var(--gold-light); }
-        .text-gold { color: var(--gold); }
-        .text-gold-light { color: var(--gold-light); }
-        html { scroll-behavior: smooth; }
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        .float-animation { animation: float 3s ease-in-out infinite; }
-
-        /* ========== DARK MODE STYLES ========== */
-        .dark {
-            --bg-primary: #0F172A;
-            --bg-secondary: #1E293B;
-            --bg-card: #334155;
-            --text-primary: #F1F5F9;
-            --text-secondary: #CBD5E1;
-            --border: #475569;
-        }
-
-        .dark {
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-        }
-
-        .dark header,
-        .dark footer {
-            background-color: var(--bg-secondary) !important;
-            border-color: var(--border);
-        }
-
-        .dark .bg-white {
-            background-color: var(--bg-card) !important;
-            color: var(--text-primary);
-        }
-
-        .dark .bg-gray-50 {
-            background-color: var(--bg-secondary) !important;
-        }
-
-        .dark .bg-gray-100 {
-            background-color: var(--bg-card) !important;
-        }
-
-        .dark .bg-gray-900 {
-            background-color: var(--bg-primary) !important;
-        }
-
-        .dark .text-gray-600,
-        .dark .text-gray-700 {
-            color: var(--text-secondary) !important;
-        }
-
-        .dark .text-gray-900 {
-            color: var(--text-primary) !important;
-        }
-
-        .dark .border-gray-200,
-        .dark .border-gray-300 {
-            border-color: var(--border) !important;
-        }
-
-        .dark .shadow-lg,
-        .dark .shadow-md {
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-        }
-
-        .dark input,
-        .dark textarea,
-        .dark select {
-            background-color: var(--bg-secondary);
-            border-color: var(--border);
-            color: var(--text-primary);
-        }
-
-        .dark input::placeholder,
-        .dark textarea::placeholder {
-            color: var(--text-secondary);
-            opacity: 0.7;
-        }
-
-        body, header, footer,
-        .bg-white, .bg-gray-50, .bg-gray-100,
-        input, textarea, select {
-            transition: background-color 0.3s ease, 
-                        color 0.3s ease, 
-                        border-color 0.3s ease;
-        }
-
-        #dark-mode-toggle,
-        #dark-mode-toggle-mobile {
-            transition: transform 0.3s ease;
-        }
-
-        #dark-mode-toggle:hover,
-        #dark-mode-toggle-mobile:hover {
-            transform: scale(1.1);
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="font-sans antialiased">
-
-    <!-- ========== HEADER ========== -->
-    <header class="sticky top-0 z-50 bg-white shadow-md">
-        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <img src="assets/img/logo-gold.png" alt="Dikwena Logo" class="h-12 md:h-16">
-                <div class="hidden md:block">
-                    <h1 class="text-xl font-bold" style="color: var(--gold);">DIKWENA</h1>
-                    <p class="text-xs text-gray-600">Trading and Projects</p>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="assets/img/logo-gold.png" alt="Dikwena Logo">
+                <div class="logo-text">
+                    <h1>DIKWENA</h1>
+                    <p>Trading and Projects</p>
                 </div>
             </div>
-            
-            <ul class="hidden md:flex space-x-8 text-sm font-medium">
-                <li><a href="index.html" class="hover:text-gold transition">Home</a></li>
-                <li><a href="about.html" class="hover:text-gold transition">About Us</a></li>
-                <li><a href="services.html" class="hover:text-gold transition">Services</a></li>
-                <li><a href="contact.html" class="text-gold transition">Contact</a></li>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
-            
-            <!-- Right side buttons (Desktop) -->
-            <div class="hidden md:flex items-center gap-4">
-                <!-- Dark Mode Toggle -->
-                <button 
-                    id="dark-mode-toggle" 
-                    class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition"
-                    aria-label="Toggle dark mode"
-                    title="Switch theme">
+            <div class="nav-actions">
+                <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">
                     <i data-lucide="sun" class="w-5 h-5 hidden dark:block text-gold"></i>
-                    <i data-lucide="moon" class="w-5 h-5 block dark:hidden text-gray-700 dark:text-gray-300"></i>
+                    <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
                 </button>
-                
-                <!-- CTA Button -->
-                <a href="contact.html" class="bg-gold text-white px-6 py-3 rounded-lg font-semibold hover:bg-gold-light transition">
-                    Request Quote
-                </a>
-            </div>
-            
-                        <div class="md:hidden flex items-center gap-2">
-                <!-- Dark Mode Toggle (Mobile) -->
-                <button 
-                    id="dark-mode-toggle-mobile" 
-                    class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition"
-                    aria-label="Toggle dark mode"
-                    title="Switch theme">
-                    <i data-lucide="sun" class="w-5 h-5 hidden dark:block text-gold"></i>
-                    <i data-lucide="moon" class="w-5 h-5 block dark:hidden text-gray-700 dark:text-gray-300"></i>
-                </button>
-                
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="text-gray-700 dark:text-gray-300">
+                <button class="btn-primary" data-modal="quote">Request Quote</button>
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
         </nav>
-        
-        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 border-t dark:border-gray-700">
-            <ul class="flex flex-col space-y-4 px-4 py-6 text-sm font-medium">
-                <li><a href="index.html" class="block hover:text-gold">Home</a></li>
-                <li><a href="about.html" class="block hover:text-gold">About Us</a></li>
-                <li><a href="services.html" class="block hover:text-gold">Services</a></li>
-                <li><a href="contact.html" class="block text-gold">Contact</a></li>
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button class="btn-primary w-full" data-modal="quote">Request Quote</button></li>
             </ul>
         </div>
     </header>
 
-    <!-- ========== PAGE HERO ========== -->
-    <section class="bg-gray-900 text-white py-16 md:py-24">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h2>
-            <p class="text-lg text-gray-300 max-w-2xl mx-auto">Request a free quote or schedule same-day service. We're here to help protect your property.</p>
+    <section style="background: var(--black); color: white; padding: 8rem 0 6rem; text-align: center; margin-top: 5rem;">
+        <div class="container">
+            <h2 style="color: white; margin-bottom: 1rem;">Get In Touch</h2>
+            <p style="color: rgba(255,255,255,0.8); font-size: 1.125rem;">Request a free quote or schedule same-day service</p>
         </div>
     </section>
 
-    <!-- ========== CONTACT METHODS ========== -->
-    <section class="py-16">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-3 gap-8 mb-16">
-                <!-- Phone -->
-                <div class="bg-gold text-white p-8 rounded-lg text-center hover:bg-gold-light transition">
-                    <div class="inline-flex items-center justify-center w-16 h-16 bg-white rounded-full mb-4">
-                        <i data-lucide="phone" class="w-8 h-8 text-gold"></i>
+    <section>
+        <div class="container">
+            <div class="grid-3" style="margin-bottom: 4rem;">
+                <div class="card scroll-reveal" style="background: var(--gold-gradient); color: white; text-align: center;">
+                    <div style="width: 4rem; height: 4rem; background: white; border-radius: 50%; display: flex; align-items: center; justify-center; margin: 0 auto 1.5rem;">
+                        <i data-lucide="phone" class="w-8 h-8" style="color: var(--gold);"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Call Us</h3>
-                    <p class="mb-4">Speak to our team directly</p>
-                    <a href="tel:0768367329" class="block text-lg font-semibold hover:underline">076 836 7329</a>
-                    <a href="tel:0813200898" class="block text-lg font-semibold hover:underline">081 320 0898</a>
+                    <h3 style="color: white; margin-bottom: 1rem;">Call Us</h3>
+                    <p style="color: white; margin-bottom: 1rem;">Speak to our team directly</p>
+                    <a href="tel:0768367329" style="color: white; font-weight: 600; font-size: 1.125rem; display: block; margin-bottom: 0.5rem;">076 836 7329</a>
+                    <a href="tel:0813200898" style="color: white; font-weight: 600; font-size: 1.125rem; display: block;">081 320 0898</a>
                 </div>
-                
-                <!-- Email -->
-                <div class="bg-gray-900 text-white p-8 rounded-lg text-center hover:bg-gray-800 transition">
-                    <div class="inline-flex items-center justify-center w-16 h-16 bg-white rounded-full mb-4">
-                        <i data-lucide="mail" class="w-8 h-8 text-gray-900"></i>
+                <div class="card scroll-reveal" style="background: var(--black); color: white; text-align: center;">
+                    <div style="width: 4rem; height: 4rem; background: white; border-radius: 50%; display: flex; align-items: center; justify-center; margin: 0 auto 1.5rem;">
+                        <i data-lucide="mail" class="w-8 h-8" style="color: var(--black);"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Email Us</h3>
-                    <p class="mb-4">Get a quote via email</p>
-                    <a href="mailto:dikwenap@gmail.com" class="block text-lg font-semibold hover:underline break-all">dikwenap@gmail.com</a>
-                    <a href="mailto:phumzazelda@gmail.com" class="block text-sm hover:underline break-all mt-2">phumzazelda@gmail.com</a>
+                    <h3 style="color: white; margin-bottom: 1rem;">Email Us</h3>
+                    <p style="color: white; margin-bottom: 1rem;">Get a quote via email</p>
+                    <a href="mailto:dikwenap@gmail.com" style="color: white; font-weight: 600; display: block; word-break: break-all;">dikwenap@gmail.com</a>
                 </div>
-                
-                <!-- WhatsApp -->
-                <div class="bg-green-500 text-white p-8 rounded-lg text-center hover:bg-green-600 transition">
-                    <div class="inline-flex items-center justify-center w-16 h-16 bg-white rounded-full mb-4">
-                        <i data-lucide="message-circle" class="w-8 h-8 text-green-500"></i>
+                <div class="card scroll-reveal" style="background: #25D366; color: white; text-align: center;">
+                    <div style="width: 4rem; height: 4rem; background: white; border-radius: 50%; display: flex; align-items: center; justify-center; margin: 0 auto 1.5rem;">
+                        <i data-lucide="message-circle" class="w-8 h-8" style="color: #25D366;"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">WhatsApp</h3>
-                    <p class="mb-4">Chat with us instantly</p>
-                    <a href="https://wa.me/27768367329" target="_blank" class="inline-block bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
-                        Start Chat
-                    </a>
+                    <h3 style="color: white; margin-bottom: 1rem;">WhatsApp</h3>
+                    <p style="color: white; margin-bottom: 1rem;">Chat with us instantly</p>
+                    <a href="https://wa.me/27768367329" target="_blank" style="display: inline-block; background: white; color: #25D366; padding: 0.75rem 1.5rem; border-radius: 50px; font-weight: 600;">Start Chat</a>
                 </div>
             </div>
 
-            <!-- ========== CONTACT FORM & INFO ========== -->
-            <div class="grid lg:grid-cols-2 gap-12">
-                <!-- Contact Form -->
-                <div class="bg-white p-8 rounded-lg shadow-lg">
-                    <h3 class="text-2xl font-bold mb-6">Request a Free Quote</h3>
-                    <div id="form-message" class="hidden mb-4 p-4 rounded-lg"></div>
+            <div class="grid-2" style="gap: 3rem; align-items: start;">
+                <div class="card scroll-reveal">
+                    <h3 style="margin-bottom: 2rem;">Request a Free Quote</h3>
+                    <div id="form-message" style="display: none; padding: 1rem; border-radius: 12px; margin-bottom: 1rem;"></div>
                     <form id="contact-form">
-                        <div class="grid md:grid-cols-2 gap-4 mb-4">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
-                                <input type="text" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
-                                <input type="tel" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent">
-                            </div>
+                        <div class="form-group">
+                            <label class="form-label">Full Name *</label>
+                            <input type="text" name="name" class="form-input" required>
                         </div>
-                        
-                        <div class="mb-4">
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
-                            <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent">
+                        <div class="form-group">
+                            <label class="form-label">Phone Number *</label>
+                            <input type="tel" name="phone" class="form-input" required>
                         </div>
-                        
-                        <div class="mb-4">
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Property Type *</label>
-                            <select name="property_type" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent">
+                        <div class="form-group">
+                            <label class="form-label">Email Address *</label>
+                            <input type="email" name="email" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Property Type *</label>
+                            <select name="property_type" class="form-select" required>
                                 <option value="">Select property type</option>
                                 <option value="residential">Residential Home</option>
                                 <option value="apartment">Apartment/Flat</option>
@@ -266,10 +114,9 @@
                                 <option value="other">Other</option>
                             </select>
                         </div>
-                        
-                        <div class="mb-4">
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Pest Problem *</label>
-                            <select name="pest_type" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent">
+                        <div class="form-group">
+                            <label class="form-label">Pest Problem *</label>
+                            <select name="pest_type" class="form-select" required>
                                 <option value="">Select pest type</option>
                                 <option value="cockroaches">Cockroaches</option>
                                 <option value="bedbugs">Bed Bugs</option>
@@ -281,166 +128,64 @@
                                 <option value="other">Other/Multiple Pests</option>
                             </select>
                         </div>
-                        
-                        <div class="mb-4">
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Location *</label>
-                            <input type="text" name="location" required placeholder="e.g., Midrand, Centurion, Soweto" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent">
+                        <div class="form-group">
+                            <label class="form-label">Location *</label>
+                            <input type="text" name="location" class="form-input" placeholder="e.g., Midrand, Centurion, Soweto" required>
                         </div>
-                        
-                        <div class="mb-6">
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Additional Details</label>
-                            <textarea name="message" rows="4" placeholder="Tell us more about your pest problem, property size, preferred date/time, etc." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent"></textarea>
+                        <div class="form-group">
+                            <label class="form-label">Additional Details</label>
+                            <textarea name="message" class="form-textarea" placeholder="Tell us more about your pest problem, property size, preferred date/time, etc."></textarea>
                         </div>
-                        
-                        <button type="submit" class="w-full bg-gold text-white px-8 py-4 rounded-lg font-semibold hover:bg-gold-light transition">
-                            Submit Request
-                        </button>
-                        
-                        <p class="text-sm text-gray-500 mt-4">* Required fields. We'll respond within 2 hours during business hours.</p>
+                        <button type="submit" class="btn-primary w-full">Submit Request</button>
+                        <p style="font-size: 0.875rem; color: var(--text-muted); margin-top: 1rem; text-align: center;">We'll respond within 2 hours during business hours</p>
                     </form>
                 </div>
 
-                <!-- Contact Info & Map -->
-                <div>
-                    <!-- Business Info -->
-                    <div class="bg-gray-50 p-8 rounded-lg mb-8">
-                        <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
-                        
-                        <div class="space-y-4">
-                            <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 bg-gold rounded-full flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="map-pin" class="w-5 h-5 text-white"></i>
-                                </div>
+                <div class="scroll-reveal">
+                    <div class="card" style="margin-bottom: 2rem;">
+                        <h3 style="margin-bottom: 2rem;">Contact Information</h3>
+                        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                            <div style="display: flex; gap: 1rem;">
+                                <div class="card-icon" style="width: 2.5rem; height: 2.5rem; flex-shrink: 0;"><i data-lucide="map-pin" style="width: 1.25rem; height: 1.25rem;"></i></div>
                                 <div>
-                                    <p class="font-semibold mb-1">Office Address</p>
-                                    <p class="text-gray-600">815 5th Road, Halfway Gardens<br>Midrand, Johannesburg, 1686<br>Gauteng Province</p>
+                                    <p style="font-weight: 600; margin-bottom: 0.5rem;">Office Address</p>
+                                    <p style="color: var(--text-secondary); line-height: 1.6;">815 5th Road, Halfway Gardens<br>Midrand, Johannesburg, 1686<br>Gauteng Province</p>
                                 </div>
                             </div>
-                            
-                            <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 bg-gold rounded-full flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="phone" class="w-5 h-5 text-white"></i>
-                                </div>
+                            <div style="display: flex; gap: 1rem;">
+                                <div class="card-icon" style="width: 2.5rem; height: 2.5rem; flex-shrink: 0;"><i data-lucide="phone" style="width: 1.25rem; height: 1.25rem;"></i></div>
                                 <div>
-                                    <p class="font-semibold mb-1">Phone Numbers</p>
-                                    <p class="text-gray-600">
-                                        <a href="tel:0768367329" class="hover:text-gold">076 836 7329</a><br>
-                                        <a href="tel:0813200898" class="hover:text-gold">081 320 0898</a><br>
-                                        <a href="tel:0609472099" class="hover:text-gold">060 947 2099</a>
-                                    </p>
+                                    <p style="font-weight: 600; margin-bottom: 0.5rem;">Phone Numbers</p>
+                                    <p style="color: var(--text-secondary);"><a href="tel:0768367329" style="display: block; margin-bottom: 0.25rem;">076 836 7329</a><a href="tel:0813200898" style="display: block; margin-bottom: 0.25rem;">081 320 0898</a><a href="tel:0609472099" style="display: block;">060 947 2099</a></p>
                                 </div>
                             </div>
-                            
-                            <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 bg-gold rounded-full flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="mail" class="w-5 h-5 text-white"></i>
-                                </div>
+                            <div style="display: flex; gap: 1rem;">
+                                <div class="card-icon" style="width: 2.5rem; height: 2.5rem; flex-shrink: 0;"><i data-lucide="mail" style="width: 1.25rem; height: 1.25rem;"></i></div>
                                 <div>
-                                    <p class="font-semibold mb-1">Email</p>
-                                    <p class="text-gray-600">
-                                        <a href="mailto:dikwenap@gmail.com" class="hover:text-gold break-all">dikwenap@gmail.com</a><br>
-                                        <a href="mailto:ludwickmabina@gmail.com" class="hover:text-gold break-all">ludwickmabina@gmail.com</a>
-                                    </p>
+                                    <p style="font-weight: 600; margin-bottom: 0.5rem;">Email</p>
+                                    <p style="color: var(--text-secondary);"><a href="mailto:dikwenap@gmail.com" style="display: block; word-break: break-all;">dikwenap@gmail.com</a></p>
                                 </div>
                             </div>
-                            
-                            <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 bg-gold rounded-full flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="clock" class="w-5 h-5 text-white"></i>
-                                </div>
+                            <div style="display: flex; gap: 1rem;">
+                                <div class="card-icon" style="width: 2.5rem; height: 2.5rem; flex-shrink: 0;"><i data-lucide="clock" style="width: 1.25rem; height: 1.25rem;"></i></div>
                                 <div>
-                                    <p class="font-semibold mb-1">Business Hours</p>
-                                    <p class="text-gray-600">
-                                        Monday - Friday: 8:00 AM - 6:00 PM<br>
-                                        Saturday: 8:00 AM - 4:00 PM<br>
-                                        Sunday: Emergency Service Only<br>
-                                        <span class="text-gold font-semibold">Same-day service available!</span>
-                                    </p>
+                                    <p style="font-weight: 600; margin-bottom: 0.5rem;">Business Hours</p>
+                                    <p style="color: var(--text-secondary);">Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: 8:00 AM - 4:00 PM<br>Sunday: Emergency Service Only<br><span style="color: var(--gold); font-weight: 600;">Same-day service available!</span></p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Service Areas -->
-                    <div class="bg-gold text-white p-8 rounded-lg">
-                        <h3 class="text-2xl font-bold mb-4">Service Areas</h3>
-                        <p class="mb-4">We proudly serve all areas across Gauteng Province, including:</p>
-                        <div class="grid grid-cols-2 gap-2 text-sm">
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="check" class="w-4 h-4"></i>
-                                <span>Midrand</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="check" class="w-4 h-4"></i>
-                                <span>Centurion</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="check" class="w-4 h-4"></i>
-                                <span>Johannesburg</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="check" class="w-4 h-4"></i>
-                                <span>Pretoria</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="check" class="w-4 h-4"></i>
-                                <span>Soweto</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="check" class="w-4 h-4"></i>
-                                <span>Kempton Park</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="check" class="w-4 h-4"></i>
-                                <span>Sandton</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="check" class="w-4 h-4"></i>
-                                <span>Rosebank</span>
-                            </div>
-                        </div>
-                        <p class="mt-4 text-sm">Not in your area? Contact us - we may be able to help!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== PAYMENT TERMS ========== -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-                <h3 class="text-2xl font-bold mb-6 text-center">Terms & Conditions</h3>
-                <div class="grid md:grid-cols-2 gap-6 text-sm">
-                    <div class="flex items-start gap-3">
-                        <i data-lucide="check-circle" class="w-6 h-6 text-gold flex-shrink-0"></i>
-                        <div>
-                            <p class="font-semibold mb-1">Payment Required Before Service</p>
-                            <p class="text-gray-600">Full payment is required before fumigation begins to confirm your appointment.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start gap-3">
-                        <i data-lucide="shield-check" class="w-6 h-6 text-gold flex-shrink-0"></i>
-                        <div>
-                            <p class="font-semibold mb-1">Service Guarantee</p>
-                            <p class="text-gray-600">We guarantee a clean, pest-free space for a considerable period after our visit.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start gap-3">
-                        <i data-lucide="calendar-x" class="w-6 h-6 text-gold flex-shrink-0"></i>
-                        <div>
-                            <p class="font-semibold mb-1">Cancellation Policy</p>
-                            <p class="text-gray-600">10% deduction applies if you cancel after payment has been received.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start gap-3">
-                        <i data-lucide="file-text" class="w-6 h-6 text-gold flex-shrink-0"></i>
-                        <div>
-                            <p class="font-semibold mb-1">Treatment Certificates</p>
-                            <p class="text-gray-600">Official treatment reports and certificates provided upon request at no extra cost.</p>
+                    <div class="card" style="background: var(--gold-gradient); color: white;">
+                        <h3 style="color: white; margin-bottom: 1rem;">Service Areas</h3>
+                        <p style="color: white; margin-bottom: 1rem;">We proudly serve all areas across Gauteng Province, including:</p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; font-size: 0.95rem;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="check" class="w-4 h-4"></i><span>Midrand</span></div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="check" class="w-4 h-4"></i><span>Centurion</span></div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="check" class="w-4 h-4"></i><span>Johannesburg</span></div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="check" class="w-4 h-4"></i><span>Pretoria</span></div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="check" class="w-4 h-4"></i><span>Soweto</span></div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="check" class="w-4 h-4"></i><span>Sandton</span></div>
                         </div>
                     </div>
                 </div>
@@ -448,28 +193,75 @@
         </div>
     </section>
 
-    <!-- ========== FOOTER ========== -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <img src="assets/img/logo-gold.png" alt="Dikwena Logo" class="h-12 mb-4">
-                    <p class="text-sm text-gray-400">Going Beyond Expectations. Professional pest control services across Gauteng Province.</p>
+    <section style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="card scroll-reveal" style="max-width: 900px; margin: 0 auto;">
+                <h3 style="text-align: center; margin-bottom: 3rem;">Find Us</h3>
+                <div style="border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-lg); height: 400px;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3589.7!2d28.1!3d-25.99!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDU5JzI0LjQiUyAyOMKwMDYnMDAuMCJF!5e0!3m2!1sen!2sza!4v1234567890" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
-                
-                <div>
-                    <h4 class="font-bold mb-4">Quick Links</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="index.html" class="hover:text-gold">Home</a></li>
-                        <li><a href="about.html" class="hover:text-gold">About Us</a></li>
-                        <li><a href="services.html" class="hover:text-gold">Services</a></li>
-                        <li><a href="contact.html" class="hover:text-gold">Contact</a></li>
+                <p style="text-align: center; margin-top: 1.5rem; color: var(--text-secondary);">815 5th Road, Halfway Gardens, Midrand, Johannesburg, 1686</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="card scroll-reveal" style="max-width: 900px; margin: 0 auto;">
+                <h3 style="text-align: center; margin-bottom: 2rem;">Terms & Conditions</h3>
+                <div class="grid-2">
+                    <div style="display: flex; gap: 1rem;">
+                        <i data-lucide="check-circle" class="w-6 h-6 text-gold" style="flex-shrink: 0; color: var(--gold);"></i>
+                        <div>
+                            <p style="font-weight: 600; margin-bottom: 0.5rem;">Payment Required Before Service</p>
+                            <p style="color: var(--text-secondary); font-size: 0.95rem;">Full payment is required before fumigation begins to confirm your appointment.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1rem;">
+                        <i data-lucide="shield-check" class="w-6 h-6 text-gold" style="flex-shrink: 0; color: var(--gold);"></i>
+                        <div>
+                            <p style="font-weight: 600; margin-bottom: 0.5rem;">Service Guarantee</p>
+                            <p style="color: var(--text-secondary); font-size: 0.95rem;">We guarantee a clean, pest-free space for a considerable period after our visit.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1rem;">
+                        <i data-lucide="calendar-x" class="w-6 h-6 text-gold" style="flex-shrink: 0; color: var(--gold);"></i>
+                        <div>
+                            <p style="font-weight: 600; margin-bottom: 0.5rem;">Cancellation Policy</p>
+                            <p style="color: var(--text-secondary); font-size: 0.95rem;">10% deduction applies if you cancel after payment has been received.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 1rem;">
+                        <i data-lucide="file-text" class="w-6 h-6 text-gold" style="flex-shrink: 0; color: var(--gold);"></i>
+                        <div>
+                            <p style="font-weight: 600; margin-bottom: 0.5rem;">Treatment Certificates</p>
+                            <p style="color: var(--text-secondary); font-size: 0.95rem;">Official treatment reports and certificates provided upon request at no extra cost.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <img src="assets/img/logo-gold.png" alt="Dikwena Logo" style="height: 3rem; margin-bottom: 1rem;">
+                    <p>Going Beyond Expectations. Professional pest control services across Gauteng Province.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                
-                <div>
-                    <h4 class="font-bold mb-4">Our Services</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
+                <div class="footer-section">
+                    <h4>Our Services</h4>
+                    <ul style="list-style: none;">
                         <li>Cockroach Control</li>
                         <li>Bed Bug Treatment</li>
                         <li>Rodent Extermination</li>
@@ -477,122 +269,68 @@
                         <li>General Fumigation</li>
                     </ul>
                 </div>
-                
-                <div>
-                    <h4 class="font-bold mb-4">Contact Us</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li class="flex items-center gap-2">
-                            <i data-lucide="phone" class="w-4 h-4"></i>
-                            <a href="tel:0768367329" class="hover:text-gold">076 836 7329</a>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i data-lucide="phone" class="w-4 h-4"></i>
-                            <a href="tel:0813200898" class="hover:text-gold">081 320 0898</a>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i data-lucide="mail" class="w-4 h-4"></i>
-                            <a href="mailto:dikwenap@gmail.com" class="hover:text-gold">dikwenap@gmail.com</a>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i data-lucide="map-pin" class="w-4 h-4"></i>
-                            <span>Midrand, Gauteng</span>
-                        </li>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <ul style="list-style: none;">
+                        <li style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;"><i data-lucide="phone" class="w-4 h-4"></i><a href="tel:0768367329">076 836 7329</a></li>
+                        <li style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;"><i data-lucide="mail" class="w-4 h-4"></i><a href="mailto:dikwenap@gmail.com">dikwenap@gmail.com</a></li>
+                        <li style="display: flex; gap: 0.5rem;"><i data-lucide="map-pin" class="w-4 h-4"></i><span>Midrand, Gauteng</span></li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+            <div class="footer-bottom">
                 <p>&copy; 2025 Dikwena Trading and Projects (PTY) LTD. All rights reserved. | Reg: 2024/607422/07</p>
             </div>
         </div>
     </footer>
 
-    <!-- ========== FLOATING WHATSAPP ========== -->
-    <a href="https://wa.me/27768367329" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition float-animation z-50">
-        <i data-lucide="message-circle" class="w-6 h-6"></i>
+    <a href="https://wa.me/27768367329" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i data-lucide="message-circle"></i>
     </a>
 
-    <script>
-        lucide.createIcons();
-        
-                // Initialize Lucide Icons
-        lucide.createIcons();
-        
-        // ========== MOBILE MENU ==========
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        if (mobileMenuBtn && mobileMenu) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-        }
+    <div class="modal-overlay" id="quote-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Request a Free Quote</h3>
+                <button class="modal-close" aria-label="Close modal"><i data-lucide="x"></i></button>
+            </div>
+            <form id="quote-form">
+                <div class="form-group">
+                    <label class="form-label">Full Name *</label>
+                    <input type="text" name="name" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Phone Number *</label>
+                    <input type="tel" name="phone" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email Address *</label>
+                    <input type="email" name="email" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Pest Problem *</label>
+                    <select name="pest_type" class="form-select" required>
+                        <option value="">Select pest type</option>
+                        <option value="cockroaches">Cockroaches</option>
+                        <option value="bedbugs">Bed Bugs</option>
+                        <option value="rodents">Rodents</option>
+                        <option value="termites">Termites</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Location *</label>
+                    <input type="text" name="location" class="form-input" placeholder="e.g., Midrand" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Additional Details</label>
+                    <textarea name="message" class="form-textarea"></textarea>
+                </div>
+                <button type="submit" class="btn-primary w-full">Submit Request</button>
+            </form>
+        </div>
+    </div>
 
-        // ========== DARK MODE ==========
-        function setDarkMode(isDark) {
-            if (isDark) {
-                document.documentElement.classList.add('dark');
-                localStorage.setItem('darkMode', 'enabled');
-            } else {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('darkMode', 'disabled');
-            }
-            lucide.createIcons();
-        }
-
-        function initDarkMode() {
-            const savedMode = localStorage.getItem('darkMode');
-            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            
-            if (savedMode === 'enabled' || (savedMode === null && systemPrefersDark)) {
-                setDarkMode(true);
-            }
-        }
-
-        // Initialize dark mode immediately
-        initDarkMode();
-
-        // Setup toggle buttons
-        document.addEventListener('DOMContentLoaded', function() {
-            const toggleBtn = document.getElementById('dark-mode-toggle');
-            if (toggleBtn) {
-                toggleBtn.addEventListener('click', function() {
-                    const isDarkMode = document.documentElement.classList.contains('dark');
-                    setDarkMode(!isDarkMode);
-                });
-            }
-            
-            const toggleBtnMobile = document.getElementById('dark-mode-toggle-mobile');
-            if (toggleBtnMobile) {
-                toggleBtnMobile.addEventListener('click', function() {
-                    const isDarkMode = document.documentElement.classList.contains('dark');
-                    setDarkMode(!isDarkMode);
-                });
-            }
-        });
-
-        // ========== CONTACT FORM SUBMISSION ==========
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Show success message
-            formMessage.classList.remove('hidden', 'bg-red-100', 'text-red-700');
-            formMessage.classList.add('bg-green-100', 'text-green-700');
-            formMessage.textContent = 'Thank you! Your request has been received. We\'ll contact you within 2 hours.';
-            
-            // Reset form
-            contactForm.reset();
-            
-            // Scroll to message
-            formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            
-            // Hide message after 5 seconds
-            setTimeout(() => {
-                formMessage.classList.add('hidden');
-            }, 5000);
-
-            
-        });
-    </script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
