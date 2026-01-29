@@ -48,9 +48,9 @@
         </div>
     </header>
 
-    <section style="background: var(--black); color: white; padding: 8rem 0 6rem; text-align: center; margin-top: 5rem;">
-        <div class="container">
-            <h2 style="color: white; margin-bottom: 1rem;">Get In Touch</h2>
+    <section class="contact-hero" style="  padding: 8rem 0 6rem; text-align: center; margin-top: 5rem;">
+        <div class="container scroll-reveal">
+            <h2  class="custom_h2">Get In Touch</h2>
             <p style="color: rgba(255,255,255,0.8); font-size: 1.125rem;">Request a free quote or schedule same-day service</p>
         </div>
     </section>
@@ -59,26 +59,37 @@
         <div class="container">
             <div class="grid-3" style="margin-bottom: 4rem;">
                 <div class="card scroll-reveal" style="background: var(--gold-gradient); color: white; text-align: center;">
-                    <div style="width: 4rem; height: 4rem; background: white; border-radius: 50%; display: flex; align-items: center; justify-center; margin: 0 auto 1.5rem;">
-                        <i data-lucide="phone" class="w-8 h-8" style="color: var(--gold);"></i>
+                    <!--<div style="width: 4rem; height: 4rem; background: white; border-radius: 50%; display: flex; align-items: center; justify-center; margin: 0 auto 1.5rem;">
+                        <i data-lucide="phone" class="w-8 h-8" style="color: var(--gold);"></i> 
+                        
+                    </div>-->
+                    <div style="width: 4rem; height: 4rem; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <i data-lucide="phone" style="width: 2rem; height: 2rem; color: var(--gold);"></i>
                     </div>
+
                     <h3 style="color: white; margin-bottom: 1rem;">Call Us</h3>
                     <p style="color: white; margin-bottom: 1rem;">Speak to our team directly</p>
                     <a href="tel:0768367329" style="color: white; font-weight: 600; font-size: 1.125rem; display: block; margin-bottom: 0.5rem;">076 836 7329</a>
                     <a href="tel:0813200898" style="color: white; font-weight: 600; font-size: 1.125rem; display: block;">081 320 0898</a>
                 </div>
                 <div class="card scroll-reveal" style="background: var(--black); color: white; text-align: center;">
-                    <div style="width: 4rem; height: 4rem; background: white; border-radius: 50%; display: flex; align-items: center; justify-center; margin: 0 auto 1.5rem;">
+                    <!-- <div style="width: 4rem; height: 4rem; background: white; border-radius: 50%; display: flex; align-items: center; justify-center; margin: 0 auto 1.5rem;">
                         <i data-lucide="mail" class="w-8 h-8" style="color: var(--black);"></i>
+                    </div> -->
+                    <div style="width: 4rem; height: 4rem; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <i data-lucide="mail" style="width: 2rem; height: 2rem; color: var(--gold);"></i>
                     </div>
                     <h3 style="color: white; margin-bottom: 1rem;">Email Us</h3>
                     <p style="color: white; margin-bottom: 1rem;">Get a quote via email</p>
                     <a href="mailto:dikwenap@gmail.com" style="color: white; font-weight: 600; display: block; word-break: break-all;">dikwenap@gmail.com</a>
                 </div>
                 <div class="card scroll-reveal" style="background: #25D366; color: white; text-align: center;">
-                    <div style="width: 4rem; height: 4rem; background: white; border-radius: 50%; display: flex; align-items: center; justify-center; margin: 0 auto 1.5rem;">
+                    <!-- <div style="width: 4rem; height: 4rem; background: white; border-radius: 50%; display: flex; align-items: center; justify-center; margin: 0 auto 1.5rem;">
                         <i data-lucide="message-circle" class="w-8 h-8" style="color: #25D366;"></i>
-                    </div>
+                    </div> -->
+                    <div style="width: 4rem; height: 4rem; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <i data-lucide="message-circle" style="width: 2rem; height: 2rem; color: #25D366;"></i>
+                    </div> 
                     <h3 style="color: white; margin-bottom: 1rem;">WhatsApp</h3>
                     <p style="color: white; margin-bottom: 1rem;">Chat with us instantly</p>
                     <a href="https://wa.me/27768367329" target="_blank" style="display: inline-block; background: white; color: #25D366; padding: 0.75rem 1.5rem; border-radius: 50px; font-weight: 600;">Start Chat</a>
@@ -87,9 +98,9 @@
 
             <div class="grid-2" style="gap: 3rem; align-items: start;">
                 <div class="card scroll-reveal">
-                    <h3 style="margin-bottom: 2rem;">Request a Free Quote</h3>
+                    <h3 class = "custom_h6" style="margin-bottom: 2rem;">Request a Free Quote</h3>
                     <div id="form-message" style="display: none; padding: 1rem; border-radius: 12px; margin-bottom: 1rem;"></div>
-                    <form id="contact-form">
+                    <form id="contact-form" class=".modal-overlay">
                         <div class="form-group">
                             <label class="form-label">Full Name *</label>
                             <input type="text" name="name" class="form-input" required>
@@ -143,7 +154,7 @@
 
                 <div class="scroll-reveal">
                     <div class="card" style="margin-bottom: 2rem;">
-                        <h3 style="margin-bottom: 2rem;">Contact Information</h3>
+                        <h3 class="custom_h6" style="margin-bottom: 2rem;">Contact Information</h3>
                         <div style="display: flex; flex-direction: column; gap: 1.5rem;">
                             <div style="display: flex; gap: 1rem;">
                                 <div class="card-icon" style="width: 2.5rem; height: 2.5rem; flex-shrink: 0;"><i data-lucide="map-pin" style="width: 1.25rem; height: 1.25rem;"></i></div>
@@ -177,7 +188,7 @@
                     </div>
 
                     <div class="card" style="background: var(--gold-gradient); color: white;">
-                        <h3 style="color: white; margin-bottom: 1rem;">Service Areas</h3>
+                        <h3 class="custom_h5" style="color: white; margin-bottom: 1rem;">Service Areas</h3>
                         <p style="color: white; margin-bottom: 1rem;">We proudly serve all areas across Gauteng Province, including:</p>
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; font-size: 0.95rem;">
                             <div style="display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="check" class="w-4 h-4"></i><span>Midrand</span></div>
@@ -196,7 +207,7 @@
     <section style="background: var(--bg-secondary);">
         <div class="container">
             <div class="card scroll-reveal" style="max-width: 900px; margin: 0 auto;">
-                <h3 style="text-align: center; margin-bottom: 3rem;">Find Us</h3>
+                <h3 class="custom_h6" style="text-align: center; margin-bottom: 3rem;">Find Us</h3>
                 <div style="border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-lg); height: 400px;">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3589.7!2d28.1!3d-25.99!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDU5JzI0LjQiUyAyOMKwMDYnMDAuMCJF!5e0!3m2!1sen!2sza!4v1234567890" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
@@ -208,7 +219,7 @@
     <section>
         <div class="container">
             <div class="card scroll-reveal" style="max-width: 900px; margin: 0 auto;">
-                <h3 style="text-align: center; margin-bottom: 2rem;">Terms & Conditions</h3>
+                <h3 class="custom_h5" style="text-align: center; margin-bottom: 2rem;">Terms & Conditions</h3>
                 <div class="grid-2">
                     <div style="display: flex; gap: 1rem;">
                         <i data-lucide="check-circle" class="w-6 h-6 text-gold" style="flex-shrink: 0; color: var(--gold);"></i>

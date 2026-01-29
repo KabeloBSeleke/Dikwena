@@ -621,24 +621,67 @@ section {
 }
 
 .modal {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(40px);
-    -webkit-backdrop-filter: blur(40px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 30px;
     padding: 3rem;
     max-width: 600px;
     width: 100%;
     max-height: 90vh;
     overflow-y: auto;
-    box-shadow: var(--shadow-xl);
+    box-shadow: 
+        var(--shadow-xl),
+        inset 0 1px 1px rgba(255, 255, 255, 0.6),
+        0 0 60px rgba(184, 150, 74, 0.1);
     transform: scale(0.9) translateY(20px);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+/* Glossy shine effect */
+.modal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.3) 0%,
+        rgba(255, 255, 255, 0.05) 50%,
+        transparent 100%
+    );
+    border-radius: 30px 30px 0 0;
+    pointer-events: none;
+    z-index: 1;
 }
 
 .dark .modal {
-    background: rgba(15, 23, 42, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 
+        var(--shadow-xl),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1),
+        0 0 60px rgba(184, 150, 74, 0.15);
+}
+
+.dark .modal::before {
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.08) 0%,
+        rgba(255, 255, 255, 0.02) 50%,
+        transparent 100%
+    );
+}
+
+/* Ensure modal content stays above the shine effect */
+.modal-header,
+.modal form {
+    position: relative;
+    z-index: 2;
 }
 
 .modal-overlay.active .modal {
@@ -785,6 +828,104 @@ footer {
     color: white;
 }
 
+/* ========== VIDEO GALLERY ========== */
+.video-gallery {
+    margin-bottom: 2rem;
+}
+
+.video-card {
+    display: block;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.video-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.video-thumbnail {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+    background: var(--bg-card);
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.video-card:hover .video-thumbnail img {
+    transform: scale(1.05);
+}
+
+.video-play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.video-card:hover .video-play-overlay {
+    opacity: 1;
+}
+
+.video-play-overlay i {
+    width: 4rem;
+    height: 4rem;
+    color: white;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.video-card:hover .video-play-overlay i {
+    transform: scale(1.1);
+}
+
+.tiktok-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.video-card:hover .tiktok-badge {
+    background: #000000;
+    transform: scale(1.1);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .video-thumbnail {
+        aspect-ratio: 9 / 16;
+        max-height: 500px;
+    }
+}
+
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
     :root {
@@ -875,4 +1016,173 @@ footer {
 *:focus-visible {
     outline: 2px solid var(--gold);
     outline-offset: 3px;
+}
+
+
+/* ========== ADDITIONAL UTILITIES ========== */
+.center-it {
+    text-align: center;
+}
+
+.center-icon {
+    
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ========== TYPOGRAPHY ========== */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: var(--text-primary);
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+h2 { font-size: clamp(2rem, 4vw, 3rem); }
+h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+h4 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
+
+/* Custom Heading Classes */
+.custom_h1 {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+}
+
+.custom_h2 {
+    font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    color: var(--text-primary);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.custom_h3 {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: var(--gold);
+    position: relative;
+}
+
+.custom_h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--gold-gradient);
+    border-radius: 2px;
+}
+
+.custom_h4 {
+    font-size: clamp(1.5rem, 2.75vw, 2rem);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: 1.25;
+    color: var(--text-primary);
+    text-transform: capitalize;
+}
+
+.custom_h5 {
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    line-height: 1.3;
+    color: var(--gold-dark);
+    text-transform: uppercase;
+    font-size: 0.95rem;
+}
+
+.custom_h6 {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+/* Dark mode adjustments for custom headings */
+.dark .custom_h1 {
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--gold-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.dark .custom_h2 {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.about-hero {
+    background-image: url('../img/k.png');
+    padding: 8rem 0 6rem;
+    text-align: center;
+    margin-top: 5rem;
+    background-size: cover;       /* Scales image to fill container */
+    background-position: center;  /* Keeps the focus in the middle */
+    background-repeat: no-repeat;
+    /* height: 100vh;*/
+    width: 100%;
+}
+
+.services-hero {
+    background-image: url('../img/k.png');
+    padding: 8rem 0 6rem;
+    text-align: center;
+    margin-top: 5rem;
+    background-size: cover;       /* Scales image to fill container */
+    background-position: center;  /* Keeps the focus in the middle */
+    background-repeat: no-repeat;
+    /* height: 100vh;*/
+    width: 100%;
+}
+
+.contact-hero {
+    background-image: url('../img/n.png');
+    padding: 8rem 0 6rem;
+    text-align: center;
+    margin-top: 5rem;
+    background-size: cover;       /* Scales image to fill container */
+    background-position: center;  /* Keeps the focus in the middle */
+    background-repeat: no-repeat;
+    /*height: 100vh;                /* Full screen height 
+    width: 100%;
+    */
+}
+
+/* Card Feature List Styles */
+.card__feature-list {
+    margin-top: 1rem;
+    list-style: none;
+    font-size: 0.95rem;
+    padding: 0; /* Ensures no default browser padding */
+}
+
+.card__feature-item {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    align-items: flex-start; /* Keeps checkmark aligned if text wraps */
+}
+
+.card__feature-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Optional: Icon alignment tweak */
+.card__feature-item i {
+    flex-shrink: 0;
+    margin-top: 0.2rem;
 }
